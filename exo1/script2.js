@@ -2,7 +2,7 @@ import fs from 'node:fs';
 
 function script2() {
     try {
-        console.log('asynchrone')
+        console.log('synchrone')
         console.time();
         fs.readFileSync('cheatsheet.md', 'utf8');
         console.timeEnd();

@@ -25,7 +25,7 @@ test('add book add an entry on the array', () => {
 
     // Then
     expect(books).toHaveLength(4)
-})
+});
 
 test('delete book should remove the entry from the array', () => {
     // When
@@ -33,5 +33,13 @@ test('delete book should remove the entry from the array', () => {
     const books = library.getBooks()
 
     // Then
-    expect(books).toHaveLength(2)
+    expect(books).toHaveLength(3)
+})
+
+test('get the book which has the best note', () => {
+    // When
+    const bestBook = library.getBestBook()
+
+    // Then
+    expect(bestBook.note).toBe(12)
 })
