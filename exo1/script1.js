@@ -1,9 +1,16 @@
 import fs from 'node:fs';
 
-try {
+function script1() {
+    console.log('asynchrone')
     console.time();
-    fs.readFileSync('cheatsheet.md', 'utf8');
+    fs.readFile('cheatsheet.md', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log(data);
+    });
     console.timeEnd();
-} catch (err) {
-    console.error(err);
 }
+
+export default script1;

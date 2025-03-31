@@ -1,5 +1,5 @@
 const books = [
-    {"id": 1, "title": "Le seigneur des anneaux", "note": "8"},
+    {id: 1, title: "Le seigneur des anneaux", note: 8},
     {id: 2, title: "Harry Potter", note: 10},
     {id: 3, title: "Le petit chaperon rouge", note: 12}
 ];
@@ -29,4 +29,11 @@ exports.deleteBookById = function deleteBookById(id) {
     } else {
         throw new Error('Book not found');
     }
+}
+
+exports.getBestBook = function getBestBook() {
+    const bestBook = books.reduce((best, current) => {
+        return current.note > best.note ? current : best;
+    }, books[0]);
+    return bestBook;
 }
